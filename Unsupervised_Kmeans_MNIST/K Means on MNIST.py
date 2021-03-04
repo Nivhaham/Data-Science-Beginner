@@ -10,7 +10,7 @@ import os
 import random
 import matplotlib.pyplot as plt
 import random
-from Ass2 import loadMNIST
+import loadMNIST
 import sys
 # import Integer
 import math
@@ -55,14 +55,14 @@ def run():
         centroids_np = get_new_centroids(picture_centroid_idx, x_train_np_normalize)
 
         # not a random check
-        #assign_images_to_centroids(picture_centroid_idx, centroids_not_random, x_train_np_normalize)
-        #centroids_not_random = get_new_centroids(picture_centroid_idx, x_train_np_normalize)
+        # assign_images_to_centroids(picture_centroid_idx, centroids_not_random, x_train_np_normalize)
+        # centroids_not_random = get_new_centroids(picture_centroid_idx, x_train_np_normalize)
 
     # now assign each image to centroid
     for i in range(60000):
-         map_image_to_centroids[i] = get_closest_centroid(centroids_np, x_train_np_normalize[i])
-         #not a random check
-        #map_image_to_centroids[i] = get_closest_centroid(centroids_not_random, x_train_np_normalize[i])
+        map_image_to_centroids[i] = get_closest_centroid(centroids_np, x_train_np_normalize[i])
+        # not a random check
+    # map_image_to_centroids[i] = get_closest_centroid(centroids_not_random, x_train_np_normalize[i])
     # print(map_image_to_centroids)
     map_centroid_to_digit = assign_label_to_centroids(y_train_np, picture_centroid_idx)
     print(map_centroid_to_digit)
